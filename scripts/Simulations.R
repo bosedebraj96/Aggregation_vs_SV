@@ -29,11 +29,11 @@ recode_mac = function(x)
   return(ifelse(x == 0, 2, ifelse(x == 2, 0, 1)))
 }
 
-# read genotype file
-data_full = fread("dummy_gene.txt")
+# read genotype file (remember to change location)
+data_full = fread("data/dummy_gene.txt")
 
-# read annotation file - 3 columns indicating whether variant is a PTV, deleterious missense or other missense variant
-annos = fread("annotations.txt")
+# read annotation file - 3 columns indicating whether variant is a PTV, deleterious missense or other missense variant (remember to change location)
+annos = fread("data/annotations.txt")
 
 #choose only rare variants and store annotations for mask
 maf_full = colMeans(data_full)/2
@@ -178,15 +178,15 @@ for(j in 1:random_sets)
 # store results for all replicates in .txt files
 pv_ptv = as.data.frame(pv_ptv)
 colnames(pv_ptv) = c("SV", "Burden", "SKAT", "SKATO")
-fwrite(pv_ptv, file = "pvalues_ptv.txt", col.names = T, sep = "\t")
+fwrite(pv_ptv, file = "results/pvalues_ptv.txt", col.names = T, sep = "\t")
 
 pv_ptv_del_mis = as.data.frame(pv_ptv_del_mis)
 colnames(pv_ptv_del_mis) = c("SV", "Burden", "SKAT", "SKATO")
-fwrite(pv_ptv_del_mis, file = "pvalues_ptv_del_mis.txt", col.names = T, sep = "\t")
+fwrite(pv_ptv_del_mis, file = "results/pvalues_ptv_del_mis.txt", col.names = T, sep = "\t")
 
 pv_ptv_all_mis = as.data.frame(pv_ptv_all_mis)
 colnames(pv_ptv_all_mis) = c("SV", "Burden", "SKAT", "SKATO")
-fwrite(pv_ptv_all_mis, file = "pvalues_ptv_all_mis.txt", col.names = T, sep = "\t")
+fwrite(pv_ptv_all_mis, file = "results/pvalues_ptv_all_mis.txt", col.names = T, sep = "\t")
 
 # compute power for tests as proportion of significant pvalues
 alpha_sv = 5E-8 # level of significance for SV tests
