@@ -3,7 +3,7 @@ library(stringr)
 library(SKAT)
 library(dplyr)
 
-#initialize variables
+#initialize parameters
 n = 50000 # sample size
 h = 0.002 # heritability
 p_caus = c(0.8, 0.3, 0.01) # causal probs for PTV, deleterious missense, and other missense
