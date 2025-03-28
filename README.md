@@ -4,4 +4,8 @@ This repository contains code to perform analytic calculations and simulations f
 
 #### Analytic Calculations
 
-Code to perform analytic calculations for single-variant (SV), burden, and SKAT tests can be found in `scripts/Analytic_Calculations.R`. Power for these three tests can be computed in the general case where we ONLY assume independent variants, and in the simple case where we further assume all variants have equal MAF, all causal variants have equal effect sizes, and all variants have equal weights in the mask. Also see our Shiny app: [Analytic Calculations App](https://debrajbose.shinyapps.io/analytic_calculations/)
+Code to perform analytic calculations for single-variant (SV), burden, and SKAT tests can be found in `scripts/Analytic_Calculations.R`. Power for these three tests can be computed in the general case where we ONLY assume independent variants, and in the simple case where we further assume all variants have equal MAF, all causal variants have equal effect sizes, and all variants have equal weights in the mask. Also see our [R Shiny app](https://debrajbose.shinyapps.io/analytic_calculations/) for a more user-friendly way to explore how power for these tests are affected by the different parameters.
+
+#### Simulations
+
+Code to perform simulations for single-variant (SV), burden, SKAT, and SKAT-O tests can be found in `scripts/Simulations.R`. Genotypes of 100,000 individuals for 100 variants in a dummy gene is provided in `data/dummy_gene.txt` along with their annotations `data/annotations.txt` (the three columns are indicators of whether a variant is a PTV, deleterious missense, or other missense variant respectively). 
